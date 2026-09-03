@@ -1,8 +1,16 @@
+#this is the name of the workflow
 name: Hello World
+#What triggers the workflow, ths is a manual trigger
 on: workflow_dispatch
+#there can ne multiple jobs, in this case just one job
 jobs:
+  # Name of the job
   hello:
+    # Where the job will run
     runs-on: ubuntu-latest
+    # The steps that form the job
     steps:
+      #Name of the step
       - name: Hello Step
+        #What the step doew
         run: echo "Hello from Github action"
