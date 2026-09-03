@@ -1,6 +1,8 @@
 name: Multiple_Jobs
 on: workflow_dispatch
 jobs:
+#by default jobs run in parallel
+#use needs to define sequence
   build:
     runs-on: ubuntu-latest
     steps:
@@ -9,12 +11,14 @@ jobs:
         
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Test Step
         run: echo "The test job"
 
   deploy:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Deploy Step
         run: echo "The deploy job"
