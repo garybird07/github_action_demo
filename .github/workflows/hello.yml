@@ -12,5 +12,9 @@ jobs:
     steps:
       #Name of the step
       - name: Hello Step
-        #What the step doew
-        run: echo "Hello from Github action"
+        #What the step does
+        # A step can run multiple shell command by 
+        # using the | command
+        run: |
+          echo "This is line one"
+          echo "This is line two"
